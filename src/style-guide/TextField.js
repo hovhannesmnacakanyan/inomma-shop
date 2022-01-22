@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { Grid, TextField } from '@mui/material';
 
-const TextFieldWrapper = ({ label, value, onChange, type, endAdornment }) => {
+const TextFieldWrapper = ({ label, value, onChange, type, endAdornment, error, helperText }) => {
   let inputProps = null;
 
   if (type === 'number') {
@@ -23,6 +23,8 @@ const TextFieldWrapper = ({ label, value, onChange, type, endAdornment }) => {
         label={label}
         value={value}
         onChange={onChange}
+        error={error}
+        helperText={helperText}
       />
     </Grid>
   );
@@ -33,6 +35,8 @@ TextFieldWrapper.defaultProps = {
   value: '',
   type: 'text',
   endAdornment: null,
+  error: null,
+  helperText: null,
 };
 
 export default memo(TextFieldWrapper);
