@@ -1,18 +1,16 @@
 import { memo } from 'react';
 
 import { Grid, TextField } from '@mui/material';
-import { MobileDatePicker } from '@mui/lab';
+import { DesktopDatePicker } from '@mui/lab';
 
-const DatePicker = ({ value, label, onChange, required, xs, sm, md, lg }) => {
+const DatePicker = ({ value, label, onChange }) => {
   return (
-    <Grid item xs={xs} sm={sm} md={md} lg={lg}>
-      <MobileDatePicker
+    <Grid item xs={12}>
+      <DesktopDatePicker
         minDate={new Date()}
         value={value}
         onChange={onChange}
-        label={label}
-        required={required}
-        renderInput={params => <TextField {...params} size='small' fullWidth />}
+        renderInput={params => <TextField {...params} size='small' fullWidth required label={label} />}
       />
     </Grid>
   );
@@ -21,11 +19,6 @@ const DatePicker = ({ value, label, onChange, required, xs, sm, md, lg }) => {
 DatePicker.defaultProps = {
   label: '',
   value: null,
-  required: null,
-  xs: 12,
-  sm: 6,
-  md: 4,
-  lg: 2,
 };
 
 export default memo(DatePicker);

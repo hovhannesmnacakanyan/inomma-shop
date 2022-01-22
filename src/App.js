@@ -1,11 +1,13 @@
 import { Container, Grid } from '@mui/material';
-import AddProduct from 'components/AddProduct';
+import ProductForm from 'components/ProductForm';
+import GetProducts from './components/GetProducts';
 
 const App = () => {
   return (
     <Container maxWidth='xl'>
       <Grid container mt={2} spacing={2}>
-        <AddProduct />
+        <ProductForm />
+        <GetProducts />
       </Grid>
     </Container>
   );
