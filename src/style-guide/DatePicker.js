@@ -3,11 +3,11 @@ import { memo } from 'react';
 import { Grid, TextField } from '@mui/material';
 import { DesktopDatePicker } from '@mui/lab';
 
-const DatePicker = ({ value, label, onChange, error, helperText }) => {
+const DatePicker = ({ value, label, onChange, error, helperText, minDate }) => {
   return (
     <Grid item xs={12}>
       <DesktopDatePicker
-        minDate={new Date()}
+        minDate={minDate}
         value={value}
         onChange={onChange}
         renderInput={params => (
@@ -23,6 +23,7 @@ DatePicker.defaultProps = {
   value: null,
   error: null,
   helperText: null,
+  minDate: new Date(),
 };
 
 export default memo(DatePicker);

@@ -96,14 +96,15 @@ const AddProduct = () => {
               <DatePicker
                 label='Start date'
                 value={product.startDate}
-                onChange={date => onChangeHandler({ startDate: date.toISOString() }, index)}
+                onChange={date => onChangeHandler({ startDate: date }, index)}
                 error={errors[index] && !!errors[index].startDate}
                 helperText={errors[index] && errors[index].startDate}
               />
               <DatePicker
                 label='End date'
+                minDate={product.startDate || new Date()}
                 value={product.endDate}
-                onChange={date => onChangeHandler({ endDate: date.toISOString() }, index)}
+                onChange={date => onChangeHandler({ endDate: date }, index)}
                 error={errors[index] && !!errors[index].endDate}
                 helperText={errors[index] && errors[index].endDate}
               />
