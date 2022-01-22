@@ -1,5 +1,14 @@
+import { Container, Grid } from '@mui/material';
+import AddProduct from 'components/AddProduct';
+
 const App = () => {
-  return <h1>Inomma shop</h1>;
+  return (
+    <Container maxWidth='xl'>
+      <Grid container mt={2} spacing={2}>
+        <AddProduct />
+      </Grid>
+    </Container>
+  );
 };
 
 export default App;
