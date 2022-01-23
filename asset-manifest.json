@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/inomma-shop/static/css/main.9facfadf.css",
+    "main.js": "/inomma-shop/static/js/main.cab19b50.js",
+    "index.html": "/inomma-shop/index.html",
+    "main.9facfadf.css.map": "/inomma-shop/static/css/main.9facfadf.css.map",
+    "main.cab19b50.js.map": "/inomma-shop/static/js/main.cab19b50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9facfadf.css",
+    "static/js/main.cab19b50.js"
+  ]
+}
