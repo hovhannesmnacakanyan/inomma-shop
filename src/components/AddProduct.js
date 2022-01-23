@@ -20,7 +20,6 @@ const validationSchema = Yup.array().of(
 );
 
 const initialValue = {
-  id: uuidv4(),
   name: '',
   price: '',
   weight: '',
@@ -63,11 +62,11 @@ const AddProduct = () => {
   const currentProducts = useMemo(() => values, [values]);
 
   return (
-    <Grid container item xs={12} md={4} spacing={2} sx={{ maxHeight: 500, overflowY: 'scroll' }}>
+    <Grid container item xs={12} md={4} lg={3} spacing={2} sx={{ maxHeight: 500, overflowY: 'scroll' }}>
       <Grid component='form' onSubmit={handleSubmit} item container spacing={2} pb={3} pr={2}>
         {currentProducts.map((product, index) => {
           return (
-            <Fragment key={product.id}>
+            <Fragment key={product.id || index}>
               <TextField
                 label='Name'
                 value={product.name}
