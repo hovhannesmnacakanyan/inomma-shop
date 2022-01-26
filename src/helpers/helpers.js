@@ -1,6 +1,6 @@
 const getProbability = (weight, totalWeight) => ((weight / totalWeight) * 100).toFixed(2);
 
-const getRandomNumber = listCount => Date.now() % listCount;
+const getRandomNumber = number => Math.floor(Math.random() * number);
 
 export const getRandomProductsList = (products, totalWeight) => {
   const randomItems = {};
