@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from 'react';
+import { Fragment } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -59,12 +59,10 @@ const AddProduct = () => {
     setValues(values.filter(item => item.id !== id));
   };
 
-  const currentProducts = useMemo(() => values, [values]);
-
   return (
     <Grid container item xs={12} md={4} lg={3} spacing={2} sx={{ maxHeight: 500, minHeight: 500, overflowY: 'scroll' }}>
       <Grid component='form' onSubmit={handleSubmit} item container spacing={2} pb={3} pr={2}>
-        {currentProducts.map((product, index) => {
+        {values.map((product, index) => {
           return (
             <Fragment key={product.id || index}>
               <TextField
@@ -113,7 +111,7 @@ const AddProduct = () => {
                   onClick={() => onRemoveHandler(product.id)}
                   variant='outlined'
                   color='error'
-                  disabled={currentProducts.length <= 1}>
+                  disabled={values.length <= 1}>
                   Remove product
                 </Button>
               </Grid>
